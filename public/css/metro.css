@@ -25230,4 +25230,27 @@ p [data-hint] {
   background: transparent;
   border-color: transparent; }
 
+html, body {
+  height: 100%; }
+
+.page-content {
+  padding-top: 3.125rem;
+  min-height: 100%;
+  height: 100%; }
+
+.table .input-control.checkbox {
+  line-height: 1;
+  min-height: 0;
+  height: auto; }
+
+@media screen and (max-width: 800px) {
+  #cell-sidebar {
+    -webkit-flex-basis: 52px;
+        -ms-flex-preferred-size: 52px;
+            flex-basis: 52px; }
+  #cell-content {
+    -webkit-flex-basis: calc(100% - 52px);
+        -ms-flex-preferred-size: calc(100% - 52px);
+            flex-basis: calc(100% - 52px); } }
+
 /*# sourceMappingURL=metro.css.map */
