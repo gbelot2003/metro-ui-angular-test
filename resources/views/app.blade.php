@@ -115,5 +115,23 @@
 <div class="notify-container"></div>
 </body>
 <script src="js/all.js"></script>
+<script>
+    function pushMessage(t){
+        var mes = 'Info|Implement independently';
+        $.Notify({
+            caption: mes.split("|")[0],
+            content: mes.split("|")[1],
+            type: t
+        });
+    }
 
+    $(function(){
+        $('.sidebar').on('click', 'li', function(){
+            if (!$(this).hasClass('active')) {
+                $('.sidebar li').removeClass('active');
+                $(this).addClass('active');
+            }
+        })
+    })
+</script>
 </html>
