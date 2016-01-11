@@ -12,5 +12,6 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss').scripts('foundation.js');
+    mix.sass('metro.scss')
+        .scripts(['jquery.js', 'metro.js']);
 });
