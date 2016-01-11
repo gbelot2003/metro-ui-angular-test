@@ -12,5 +12,5 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss').browserify('foundation.js');
+    mix.sass('app.scss').scripts('foundation.js');
 });
