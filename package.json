@@ -2,11 +2,13 @@
   "private": true,
   "devDependencies": {
     "angular": "^1.5.0-rc.0",
+    "angular-animate": "^1.4.8",
     "angular-modal-service": "^0.6.9",
     "angular-resource": "^1.4.8",
     "angular-ui-router": "^0.2.15",
     "angular-ui-select2": "0.0.5",
     "babel": "^6.3.26",
+    "datatables": "^1.10.9",
     "gulp": "^3.8.8",
     "laravel-elixir": "^1.0.0"
   },

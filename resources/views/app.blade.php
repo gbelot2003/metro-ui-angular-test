@@ -1,7 +1,8 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
 <head>
-    <title>test</title>
+    <title>Titulo</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/metro.css">
 </head>
 
@@ -110,7 +111,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="notify-container"></div>
 </body>
