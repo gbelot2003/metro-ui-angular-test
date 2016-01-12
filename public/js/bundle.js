@@ -5,10 +5,20 @@ require('angular');
 require('angular-ui-router');
 require('angular-animate');
 
-var app = angular.module('adminApp', ['ngRoute']);
-app.controller('clientesCtlr', require('./app/controllers/clientesCtrl.js'));
+var app = angular.module('adminApp', ['ui.router']);
+app.config(function ($routeProvider, $locationProvider) {
 
-},{"./app/controllers/clientesCtrl.js":7,"angular":6,"angular-animate":3,"angular-ui-router":4}],2:[function(require,module,exports){
+    $routeProvider.when('/', {
+        controller: 'homeController',
+        templateUrl: 'app/view/index.js'
+    });
+
+    $locationProvider.html5Mode(false);
+});
+
+app.controller('homeController', require('./app/controllers/homeController.js'));
+
+},{"./app/controllers/homeController.js":7,"angular":6,"angular-animate":3,"angular-ui-router":4}],2:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -38181,8 +38191,8 @@ module.exports = angular;
 
 },{"./angular":5}],7:[function(require,module,exports){
 'use strict';
-module.exports = function ($scope, ClientesController) {
-    $scope.title = "Clientes";
+module.exports = function ($scope, clientesCtlr, route) {
+    $scope.title = "HomeController";
 };
 
 },{}]},{},[1]);

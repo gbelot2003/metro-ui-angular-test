@@ -3,12 +3,13 @@
 <head>
     <title>Titulo</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/metro.css">
 </head>
 
 <body class="bg-steel" cz-shortcut-listen="true">
 
-<div class="app-bar fixed-top darcula" data-role="appbar">
+<div class="app-bar fixed-top darcula" data-role="appbar" ng-app="adminApp">
     <a class="app-bar-element branding">BrandName</a>
     <span class="app-bar-divider"></span>
     <ul class="app-bar-menu">
@@ -99,22 +100,20 @@
                 </ul>
             </div>
             <div class="cell auto-size padding20 bg-white" id="cell-content">
-                <h1 class="text-light">Virtual machines <span class="mif-drive-eta place-right"></span></h1>
-                <hr class="thin bg-grayLighter">
-                <button class="button primary" onclick="pushMessage('info')"><span class="mif-plus"></span> Create...</button>
-                <button class="button success" onclick="pushMessage('success')"><span class="mif-play"></span> Start</button>
-                <button class="button warning" onclick="pushMessage('warning')"><span class="mif-loop2"></span> Restart</button>
-                <button class="button alert" onclick="pushMessage('alert')">Stop all machines</button>
-                <hr class="thin bg-grayLighter">
+
 
             </div>
         </div>
     </div>
 </div>
 
-<div class="notify-container"></div>
+<div class="notify-container"></div>.
+
 </body>
+
+
 <script src="js/all.js"></script>
+<script src="js/bundle.js"></script>
 <script>
     function pushMessage(t){
         var mes = 'Info|Implement independently';
