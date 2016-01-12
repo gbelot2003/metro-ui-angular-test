@@ -101,6 +101,7 @@
             </div>
             <div class="cell auto-size padding20 bg-white" id="cell-content">
 
+                <!-- Aquí contenido de vistas -->
 
             </div>
         </div>
