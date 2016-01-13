@@ -4,12 +4,15 @@
 require('angular');
 require('angular-route');
 require('angular-animate');
+
 var uibs = require('angular-ui-bootstrap');
+var menu = require('./directives/menu');
 
 /** Main instance **/
-var app = angular.module('adminApp', ['ngRoute']);
+var app = angular.module('adminApp', ['ngRoute', uibs]);
 
 /** Directives **/
+app.directive('menuNav', menu);
 
 /** Controllers **/
 var WelcomeCtrl = require('./controllers/WelcomeCtrl');
@@ -30,7 +33,7 @@ app.config(function ($routeProvider, $locationProvider) {
 app.controller('menuController', ['$scope', menuController]);
 app.controller('WelcomeCtrl', ['$scope', WelcomeCtrl]);
 
-},{"./controllers/WelcomeCtrl":10,"./controllers/menuController":11,"angular":9,"angular-animate":3,"angular-route":5,"angular-ui-bootstrap":7}],2:[function(require,module,exports){
+},{"./controllers/WelcomeCtrl":10,"./controllers/menuController":11,"./directives/menu":12,"angular":9,"angular-animate":3,"angular-route":5,"angular-ui-bootstrap":7}],2:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -41677,5 +41680,17 @@ var menuController = function menuController($scope, $location) {
 };
 
 module.exports = menuController;
+
+},{}],12:[function(require,module,exports){
+'use strict';
+
+var menu = function menu() {
+    return {
+        restrict: 'E',
+        templateUrl: 'js/app/views/directives/menu.html'
+    };
+};
+
+module.exports = menu;
 
 },{}]},{},[1]);

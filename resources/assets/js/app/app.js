@@ -3,12 +3,15 @@
 require('angular');
 require('angular-route');
 require('angular-animate');
+
 var uibs = require('angular-ui-bootstrap');
+var menu = require('./directives/menu');
 
 /** Main instance **/
-var app = angular.module('adminApp', ['ngRoute']);
+var app = angular.module('adminApp', ['ngRoute', uibs]);
 
 /** Directives **/
+app.directive('menuNav', menu);
 
 /** Controllers **/
 var WelcomeCtrl = require('./controllers/WelcomeCtrl');
