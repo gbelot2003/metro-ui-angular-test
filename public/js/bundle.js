@@ -6,7 +6,9 @@ require('angular-ui-router');
 require('angular-animate');
 
 var app = angular.module('adminApp', ['ui.router']);
-app.config(function ($routeProvider, $locationProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise("/state1");
 
     $routeProvider.when('/', {
         controller: 'homeController',

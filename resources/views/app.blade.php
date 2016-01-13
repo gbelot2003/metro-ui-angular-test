@@ -100,7 +100,7 @@
                 </ul>
             </div>
             <div class="cell auto-size padding20 bg-white" id="cell-content">
-
+                <ng-view></ng-view>
                 <!-- Aquí contenido de vistas -->
 
             </div>
@@ -114,7 +114,7 @@
 
 
 <script src="js/all.js"></script>
-<script src="js/bundle.js"></script>
+<script src="js/app/bundle.js"></script>
 <script>
     function pushMessage(t){
         var mes = 'Info|Implement independently';
