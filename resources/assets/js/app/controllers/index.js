@@ -1,3 +1,3 @@
 'use strict';
 
-require('./homeController');
+require('./homeController.js');

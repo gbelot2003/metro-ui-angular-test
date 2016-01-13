@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/metro.css">
 </head>
 
-<body class="bg-steel" cz-shortcut-listen="true">
+<body class="bg-steel" cz-shortcut-listen="true" data-ng-app="adminApp">
 
-<div class="app-bar fixed-top darcula" data-role="appbar" ng-app="adminApp">
-    <a class="app-bar-element branding">BrandName</a>
+<div class="app-bar fixed-top darcula" data-role="appbar">
+    <a class="app-bar-element branding">SATCOM</a>
     <span class="app-bar-divider"></span>
     <ul class="app-bar-menu">
-        <li data-flexorderorigin="0" data-flexorder="1"><a href="">Dashboard</a></li>
+        <li data-flexorderorigin="0" data-flexorder="1"><a href="#/">Dashboard</a></li>
         <li data-flexorderorigin="1" data-flexorder="2">
             <a href="" class="dropdown-toggle">Project</a>
             <ul class="d-menu" data-role="dropdown">
@@ -101,8 +101,6 @@
             </div>
             <div class="cell auto-size padding20 bg-white" id="cell-content">
                 <ng-view></ng-view>
-                <!-- Aquí contenido de vistas -->
-
             </div>
         </div>
     </div>
@@ -111,7 +109,6 @@
 <div class="notify-container"></div>.
 
 </body>
-
 
 <script src="js/all.js"></script>
 <script src="js/app/bundle.js"></script>
