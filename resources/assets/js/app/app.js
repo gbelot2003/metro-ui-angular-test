@@ -3,6 +3,7 @@
 require('angular');
 require('angular-route');
 require('angular-animate');
+var uibs = require('angular-ui-bootstrap');
 
 /** Main instance **/
 var app = angular.module('adminApp', ['ngRoute']);
