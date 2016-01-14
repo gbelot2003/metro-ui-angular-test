@@ -19,7 +19,6 @@ var ClientesController = require('./controllers/ClientesController');
 /** Directives **/
 app.directive('menuNav', menu);
 
-
 /** Config **/
 app.config(function($routeProvider, $locationProvider){
 

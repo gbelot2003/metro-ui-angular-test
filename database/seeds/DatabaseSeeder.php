@@ -17,5 +17,18 @@ class DatabaseSeeder extends Seeder
         // $this->call('UserTableSeeder');
 
         Model::reguard();
-    }
+    	$this->call('AgredidosTableSeeder');
+		$this->call('AgresioncategoriasTableSeeder');
+		$this->call('AgresionsTableSeeder');
+		$this->call('AgresorsTableSeeder');
+		$this->call('DepartamentosTableSeeder');
+		$this->call('GenerosTableSeeder');
+		$this->call('MediosTableSeeder');
+		$this->call('MesTableSeeder');
+		$this->call('MunicipiosTableSeeder');
+		$this->call('TipoagresionsTableSeeder');
+		$this->call('TipoagresorsTableSeeder');
+		$this->call('TiposistemasTableSeeder');
+		$this->call('TiposujetoagredidosTableSeeder');
+	}
 }

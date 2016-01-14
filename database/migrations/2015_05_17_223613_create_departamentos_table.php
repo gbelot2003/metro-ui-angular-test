@@ -16,6 +16,7 @@ class CreateDepartamentosTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('departamento');
+			$table->string('zona');
 		});
 	}
 
