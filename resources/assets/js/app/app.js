@@ -28,7 +28,7 @@ app.config(function($routeProvider, $locationProvider){
             controller: 'WelcomeCtrl',
             templateUrl: './js/app/views/index.html'
         })
-        .when('/clientes', {
+        .when('/reportes', {
             controller: 'ClientesController',
             templateUrl: './js/app/views/clientes/index.html'
         })
