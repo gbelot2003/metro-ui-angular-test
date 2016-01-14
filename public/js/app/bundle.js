@@ -5,18 +5,20 @@ require('angular');
 require('angular-route');
 require('angular-animate');
 
+/** libraries require **/
 var uibs = require('angular-ui-bootstrap');
 var menu = require('./directives/menu');
 
 /** Main instance **/
-var app = angular.module('adminApp', ['ngRoute', uibs]);
-
-/** Directives **/
-app.directive('menuNav', menu);
+var app = angular.module('adminApp', ['ngRoute', 'ngAnimate', uibs]);
 
 /** Controllers **/
 var WelcomeCtrl = require('./controllers/WelcomeCtrl');
 var menuController = require('./controllers/menuController');
+var ClientesController = require('./controllers/ClientesController');
+
+/** Directives **/
+app.directive('menuNav', menu);
 
 /** Config **/
 app.config(function ($routeProvider, $locationProvider) {
@@ -24,7 +26,10 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         controller: 'WelcomeCtrl',
         templateUrl: './js/app/views/index.html'
-    });
+    }).when('/clientes', {
+        controller: 'ClientesController',
+        templateUrl: './js/app/views/clientes/index.html'
+    }).otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode(false);
 });
@@ -32,8 +37,9 @@ app.config(function ($routeProvider, $locationProvider) {
 /** Instances **/
 app.controller('menuController', ['$scope', menuController]);
 app.controller('WelcomeCtrl', ['$scope', WelcomeCtrl]);
+app.controller('ClientesController', ['$scope', ClientesController]);
 
-},{"./controllers/WelcomeCtrl":10,"./controllers/menuController":11,"./directives/menu":12,"angular":9,"angular-animate":3,"angular-route":5,"angular-ui-bootstrap":7}],2:[function(require,module,exports){
+},{"./controllers/ClientesController":10,"./controllers/WelcomeCtrl":11,"./controllers/menuController":12,"./directives/menu":13,"angular":9,"angular-animate":3,"angular-route":5,"angular-ui-bootstrap":7}],2:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -41663,13 +41669,23 @@ module.exports = angular;
 
 },{"./angular":8}],10:[function(require,module,exports){
 'use strict';
+var ClientesController = function ClientesController($scope) {
+    $scope.pageClass = 'page-clientes';
+    $scope.testVar = 'Esta es el area de clientes Controller!';
+};
+
+module.exports = ClientesController;
+
+},{}],11:[function(require,module,exports){
+'use strict';
 var WelcomeCtrl = function WelcomeCtrl($scope) {
+    $scope.pageClass = 'page-home';
     $scope.testVar = 'We are up and running from a required module!';
 };
 
 module.exports = WelcomeCtrl;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 "use strict";
 
 var menuController = function menuController($scope, $location) {
@@ -41681,13 +41697,20 @@ var menuController = function menuController($scope, $location) {
 
 module.exports = menuController;
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 var menu = function menu() {
     return {
         restrict: 'E',
-        templateUrl: 'js/app/views/directives/menu.html'
+        templateUrl: 'js/app/views/directives/menu.html',
+        controller: function controller($scope, $location, $route) {
+            $scope.activePath = null;
+            $scope.$on('$routeChangeSuccess', function () {
+                $scope.activePath = $location.path();
+            });
+        },
+        controllerAs: menu
     };
 };
 

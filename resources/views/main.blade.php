@@ -14,9 +14,7 @@
 </header>
 <main class="container">
     <div class="row">
-        <div class="col-md-12">
-            <ng-view></ng-view>
-        </div>
+        <div class="nga-default nga-stagger nga-slide-down col-md-12" ng-view></div>
     </div>
 </main>
 </body>
