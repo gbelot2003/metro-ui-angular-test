@@ -16,6 +16,8 @@ class CreateMunicipiosTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('departamento_id')->unsigned()->index();
+			$table->double('lat')->nullable();
+			$table->double('long')->nullable();
 			$table->string('municipio');
 		});
 	}
