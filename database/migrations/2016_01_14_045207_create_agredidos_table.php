@@ -18,14 +18,10 @@ class CreateAgredidosTable extends Migration
             $table->integer('alertas_id')->unsigned()->index();
             $table->string('name');
             $table->integer('generos_id')->unsigned()->index();
+            $table->string('medios');
             $table->integer('medios_id')->unsigned()->index();
             $table->integer('tiposujetoagredidos_id')->unsigned()->index();
             $table->integer('agresions_id')->unsigned()->index();
-            //$table->timestamps();
-            $table->foreign('alertas_id')
-                ->references('id')
-                ->on('alertas')
-                ->onDelete('cascade');
         });
     }
 

@@ -23,12 +23,12 @@ class DatabaseSeeder extends Seeder
 		$this->call('AgresorsTableSeeder');
 		$this->call('DepartamentosTableSeeder');
 		$this->call('GenerosTableSeeder');
-		$this->call('MediosTableSeeder');
 		$this->call('MesTableSeeder');
 		$this->call('MunicipiosTableSeeder');
 		$this->call('TipoagresionsTableSeeder');
 		$this->call('TipoagresorsTableSeeder');
 		$this->call('TiposistemasTableSeeder');
 		$this->call('TiposujetoagredidosTableSeeder');
+		$this->call('AlertasTableSeeder');
 	}
 }
