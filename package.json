@@ -12,6 +12,7 @@
     "bootstrap-sass": "^3.3.6",
     "datatables": "^1.10.9",
     "gulp": "^3.8.8",
+    "highcharts-ng": "0.0.11",
     "laravel-elixir": "^1.0.0"
   },
   "dependencies": {

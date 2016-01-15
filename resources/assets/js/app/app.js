@@ -1,15 +1,14 @@
 'use strict';
 
 require('angular');
-require('angular-route');
-require('angular-animate');
 
-/** libraries require **/
+/** libraries injected require **/
+var routes = require('angular-route');
+var animate = require('angular-animate');
 var uibs = require('angular-ui-bootstrap');
-var menu = require('./directives/menu');
 
 /** Main instance **/
-var app = angular.module('adminApp', ['ngRoute','ngAnimate', uibs]);
+var app = angular.module('adminApp', [routes, animate, uibs]);
 
 /** Controllers **/
 var WelcomeCtrl = require('./controllers/WelcomeCtrl');
@@ -17,6 +16,7 @@ var menuController = require('./controllers/menuController');
 var ClientesController = require('./controllers/ClientesController');
 
 /** Directives **/
+var menu = require('./directives/menu');
 app.directive('menuNav', menu);
 
 /** Config **/
