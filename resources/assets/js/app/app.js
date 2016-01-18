@@ -12,9 +12,9 @@ var high = require('highcharts-ng');
 var app = angular.module('adminApp', [routes, animate, uibs, high]);
 
 /** Controllers **/
-var WelcomeCtrl = require('./controllers/WelcomeCtrl');
 var menuController = require('./controllers/menuController');
-var ClientesController = require('./controllers/ClientesController');
+var WelcomeCtrl = require('./controllers/WelcomeCtrl');
+var Reportes = require('./controllers/ReportesController');
 
 /** Directives **/
 var menu = require('./directives/menu');
@@ -29,8 +29,8 @@ app.config(function($routeProvider, $locationProvider){
             templateUrl: './js/app/views/index.html'
         })
         .when('/reportes', {
-            controller: 'ClientesController',
-            templateUrl: './js/app/views/clientes/index.html'
+            controller: 'ReportesController',
+            templateUrl: './js/app/views/reportes/index.html'
         })
         .otherwise({redirectTo: '/'});
 
@@ -42,4 +42,4 @@ app.config(function($routeProvider, $locationProvider){
 /** Instances **/
 app.controller('menuController', ['$scope', menuController]);
 app.controller('WelcomeCtrl', ['$scope', WelcomeCtrl]);
-app.controller('ClientesController', ['$scope', ClientesController]);
+app.controller('ReportesController', ['$scope', Reportes]);

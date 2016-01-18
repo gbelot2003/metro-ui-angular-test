@@ -13,9 +13,9 @@ var high = require('highcharts-ng');
 var app = angular.module('adminApp', [routes, animate, uibs, high]);
 
 /** Controllers **/
-var WelcomeCtrl = require('./controllers/WelcomeCtrl');
 var menuController = require('./controllers/menuController');
-var ClientesController = require('./controllers/ClientesController');
+var WelcomeCtrl = require('./controllers/WelcomeCtrl');
+var Reportes = require('./controllers/ReportesController');
 
 /** Directives **/
 var menu = require('./directives/menu');
@@ -28,8 +28,8 @@ app.config(function ($routeProvider, $locationProvider) {
         controller: 'WelcomeCtrl',
         templateUrl: './js/app/views/index.html'
     }).when('/reportes', {
-        controller: 'ClientesController',
-        templateUrl: './js/app/views/clientes/index.html'
+        controller: 'ReportesController',
+        templateUrl: './js/app/views/reportes/index.html'
     }).otherwise({ redirectTo: '/' });
 
     $locationProvider.html5Mode(false);
@@ -38,9 +38,9 @@ app.config(function ($routeProvider, $locationProvider) {
 /** Instances **/
 app.controller('menuController', ['$scope', menuController]);
 app.controller('WelcomeCtrl', ['$scope', WelcomeCtrl]);
-app.controller('ClientesController', ['$scope', ClientesController]);
+app.controller('ReportesController', ['$scope', Reportes]);
 
-},{"./controllers/ClientesController":11,"./controllers/WelcomeCtrl":12,"./controllers/menuController":13,"./directives/menu":14,"angular":9,"angular-animate":3,"angular-route":5,"angular-ui-bootstrap":7,"highcharts-ng":10}],2:[function(require,module,exports){
+},{"./controllers/ReportesController":11,"./controllers/WelcomeCtrl":12,"./controllers/menuController":13,"./directives/menu":14,"angular":9,"angular-animate":3,"angular-route":5,"angular-ui-bootstrap":7,"highcharts-ng":10}],2:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -42170,7 +42170,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
 },{}],11:[function(require,module,exports){
 'use strict';
-var ClientesController = function ClientesController($scope, high) {
+var ReportesController = function ReportesController($scope, high) {
     $scope.pageClass = 'page-clientes';
     $scope.testVar = 'Esta es el area de clientes Controller!';
 
@@ -42181,14 +42181,19 @@ var ClientesController = function ClientesController($scope, high) {
             }
         },
         series: [{
-            data: [10, 15, 12, 8, 7]
+            name: 'Periodistas',
+            data: [24, 11, 1, 9]
+        }, {
+            name: 'Comunicador Social',
+            data: [14, 1, 0, 2]
         }],
+
         title: {
-            text: 'Hello'
+            text: 'Tipo Sujeto Agredido'
         }
     };
 };
-module.exports = ClientesController;
+module.exports = ReportesController;
 
 },{}],12:[function(require,module,exports){
 'use strict';
