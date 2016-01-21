@@ -38,7 +38,7 @@ app.config(function ($routeProvider, $locationProvider) {
 /** Instances **/
 app.controller('menuController', ['$scope', menuController]);
 app.controller('WelcomeCtrl', ['$scope', WelcomeCtrl]);
-app.controller('ReportesController', ['$scope', Reportes]);
+app.controller('ReportesController', ['$scope', '$http', Reportes]);
 
 },{"./controllers/ReportesController":11,"./controllers/WelcomeCtrl":12,"./controllers/menuController":13,"./directives/menu":14,"angular":9,"angular-animate":3,"angular-route":5,"angular-ui-bootstrap":7,"highcharts-ng":10}],2:[function(require,module,exports){
 /**
@@ -42170,29 +42170,45 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
 
 },{}],11:[function(require,module,exports){
 'use strict';
-var ReportesController = function ReportesController($scope, high) {
+var ReportesController = function ReportesController($scope, $http, high) {
     $scope.pageClass = 'page-clientes';
     $scope.testVar = 'Esta es el area de clientes Controller!';
 
-    $scope.chartConfig = {
-        options: {
-            chart: {
-                type: 'bar'
-            }
-        },
-        series: [{
-            name: 'Periodistas',
-            data: [24, 11, 1, 9]
-        }, {
-            name: 'Comunicador Social',
-            data: [14, 1, 0, 2]
-        }],
+    $http.get('api/reportes/tipo-sujeto-agredido').success(function (data) {
+        $scope.data = data;
 
-        title: {
-            text: 'Tipo Sujeto Agredido'
-        }
-    };
+        var arr = [];
+        data.forEach(function (e) {
+            arr.push(e.y);
+        });
+        console.log(arr);
+        $scope.chartConfig = {
+            options: {
+                chart: {
+                    type: 'bar'
+                }
+            },
+            title: {
+                text: 'Tipo Sujeto Agredido'
+            },
+            xAxis: {
+                categories: ['Periodista', 'Comunicador Social', 'Camarografo', 'Vocero de grupo campesino']
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true
+                    },
+                    enableMouseTracking: false
+                }
+            },
+            series: [{
+                name: 'Sujeto Agredido', data: arr
+            }]
+        };
+    });
 };
+
 module.exports = ReportesController;
 
 },{}],12:[function(require,module,exports){

@@ -42,4 +42,4 @@ app.config(function($routeProvider, $locationProvider){
 /** Instances **/
 app.controller('menuController', ['$scope', menuController]);
 app.controller('WelcomeCtrl', ['$scope', WelcomeCtrl]);
-app.controller('ReportesController', ['$scope', Reportes]);
+app.controller('ReportesController', ['$scope', '$http', Reportes]);
