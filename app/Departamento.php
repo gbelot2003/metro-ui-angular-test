@@ -19,4 +19,22 @@ class Departamento extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * Relationship with Alerta
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function alertas(){
+        return $this->hasMany('App\Alerta', 'departamentos_id', 'id');
+    }
+
+    /**
+     * Relationship with Municipio
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function municipios(){
+        return $this->hasMany('Municipio', 'departamentos_id', 'id');
+    }
 }

@@ -19,4 +19,13 @@ class Tiposistema extends Model
      * @var array
      */
     protected $fillable = ['tiposistema'];
+
+    /**
+     * Relationship with Agredido
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function agredidos(){
+        return $this->hasMany('App/Agredido', 'medios_id');
+    }
 }

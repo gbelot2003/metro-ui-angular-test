@@ -19,4 +19,13 @@ class Mes extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * Relationship with Alerta
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function alertas(){
+        return  $this->hasMany('App\Mes', 'mes_id', 'id');
+    }
 }

@@ -19,4 +19,22 @@ class Municipio extends Model
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * Relationship with Alerta
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function alertas(){
+        return $this->hasMany('App\Alertas', 'municipios_id', 'id');
+    }
+
+    /**
+     * Relationship with Departamento
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function departamentos(){
+        return $this->belongsTo('App\Departamento', 'departamento_id', 'id');
+    }
 }

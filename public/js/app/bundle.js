@@ -42192,7 +42192,7 @@ var ReportesController = function ReportesController($scope, $http, high) {
                 text: 'Tipo Sujeto Agredido'
             },
             xAxis: {
-                categories: ['Periodista', 'Comunicador Social', 'Camarografo', 'Vocero de grupo campesino']
+                categories: arr
             },
             plotOptions: {
                 line: {
@@ -42203,7 +42203,7 @@ var ReportesController = function ReportesController($scope, $http, high) {
                 }
             },
             series: [{
-                name: 'Sujeto Agredido', data: arr
+                name: 'Años', data: arr
             }]
         };
     });

@@ -19,4 +19,12 @@ class Tiposujetoagredido extends Model
      * @var array
      */
     protected $fillable = ['tiposujetoagredido'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function agredidos(){
+        return $this->hasMany('App/Agredido', 'tiposujetoagredidos_id');
+    }
+
 }

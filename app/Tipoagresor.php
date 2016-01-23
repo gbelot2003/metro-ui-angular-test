@@ -19,4 +19,13 @@ class Tipoagresor extends Model
      * @var array
      */
     protected $fillable = ['tipoagresor'];
+
+    /**
+     * Relationship with Agresor
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function agresores(){
+        return $this->hasMany('App/Agresor', 'tipoagresors_id', 'id');
+    }
 }

@@ -20,4 +20,10 @@ class Genero extends Model
      */
     public $timestamps = false;
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function agredidos(){
+        return $this->hasMany('App/Agredido', 'generos_id');
+    }
 }
