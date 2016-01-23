@@ -14,10 +14,11 @@ class CreateAgresorsTable extends Migration
     {
         Schema::create('agresors', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('alertas_id')->unsigned();
+            $table->integer('alertas_id')->unsigned()->index();
             $table->string('name', 100);
             $table->integer('tipoagresors_id')->unsigned();
             $table->integer('estadojudicial_id')->nullable();
+
         });
     }
 

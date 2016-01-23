@@ -30,6 +30,9 @@ class CreateTableAlerta extends Migration
             $table->integer('usuarios_id')->unsigned()->nullable();
             $table->timestamps();
 
+            $table->foreign('departamentos_id')->references('id')->on('departamentos');
+            $table->foreign('municipios_id')->references('id')->on('municipios');
+
         });
     }
 

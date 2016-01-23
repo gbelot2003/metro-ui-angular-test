@@ -22,6 +22,7 @@ class CreateAgredidosTable extends Migration
             $table->integer('medios_id')->unsigned()->index();
             $table->integer('tiposujetoagredidos_id')->unsigned()->index();
             $table->integer('agresions_id')->unsigned()->index();
+
         });
     }
 
