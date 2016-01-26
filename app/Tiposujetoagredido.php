@@ -24,7 +24,7 @@ class Tiposujetoagredido extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function agredidos(){
-        return $this->hasMany('App/Agredido', 'tiposujetoagredidos_id');
+        return $this->hasMany('App\Agredido', 'tiposujetoagredidos_id');
     }
 
 }

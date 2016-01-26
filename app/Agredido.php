@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Agredido extends Model
 {
@@ -66,5 +67,24 @@ class Agredido extends Model
         return $this->belongsTo('App\Agresion', 'agresions_id', 'id');
     }
 
+    /**
+     * Scope Query for Guet the years related to Agredido
+     *
+     * @param $query
+     */
+    public function scopeYears($query){
+        $query->Join('alertas', 'agredidos.alertas_id', '=', 'alertas.id')
+            ->select('alertas.year')
+            ->GroupBy('alertas.year');
+    }
 
+    public function scopeAgredidosByYear($query, $year){
+        $query->Join('tiposujetoagredidos', 'agredidos.tiposujetoagredidos_id', '=', 'tiposujetoagredidos.id')
+            ->Join('agresions', 'agredidos.agresions_id', '=', 'agresions.id')
+            ->Join('agresioncategorias', 'agresions.agresioncategorias_id', '=', 'agresioncategorias.id')
+            ->Join('alertas', 'agredidos.alertas_id', '=', 'alertas.id')
+            ->select(DB::raw('agredidos.agresions_id as id, agresions.agresion, Count(agredidos.agresions_id) as contador'))
+            ->where('alertas.year', '=', $year)
+            ->groupBy('agresions.agresion');
+    }
 }
